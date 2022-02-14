@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_margin">16dp</dimen>
+    <dimen name="base_normal_text_size">16sp</dimen>
+    <dimen name="base_small_margin">10dp</dimen>
+    <dimen name="base_small_text_size">14sp</dimen>
+    <!--Settings fragment-->
+    <dimen name="settings_user_photo_size">55dp</dimen>
+    <dimen name="settings_user_photo_border">2dp</dimen>
+    <dimen name="settings_btn_change_photo_size">45dp</dimen>
+    <dimen name="settings_ripple_effect_radius">4dp</dimen>
+    <dimen name="appPadding">5dp</dimen>
+</resources>

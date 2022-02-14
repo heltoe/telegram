@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Telegram</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_default_username">Vlad Zhulinskiy</string>
+    <string name="settings_default_status">в сети</string>
+    <string name="settings_text_account">Аккаунт</string>
+    <string name="settings_default_phone_number">+79266619367</string>
+    <string name="settings_label_phone_number">Нажмите, чтоьы изменить номер телефона</string>
+    <string name="settings_label_login">Имя пользователя</string>
+    <string name="settings_default_login">shezhok</string>
+    <string name="settings_default_bio">О себе</string>
+    <string name="settings_label_bio">Напишите немного о себе</string>
+    <string name="settings_menu_change_name">Изменить имя</string>
+    <string name="settings_menu_exit">Выход</string>
+    <string name="cd_register_image">register_image</string>
+    <string name="register_text_enter_code">Введите код</string>
+    <string name="register_text_we_send">Мы отправили SMS с кодом проерки на ваш телефон</string>
+    <string name="register_code_placeholder">- - - - - -</string>
+    <string name="register_title_your_phone">Ваш телефон</string>
+</resources>
