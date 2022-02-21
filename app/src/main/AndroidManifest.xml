@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Telegram">
         <activity
             android:name=".activities.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

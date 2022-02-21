@@ -1,6 +1,5 @@
 package study.heltoe.telegram
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -8,6 +7,8 @@ import study.heltoe.telegram.activities.RegisterActivity
 import study.heltoe.telegram.databinding.ActivityMainBinding
 import study.heltoe.telegram.ui.fragments.ChatFragment
 import study.heltoe.telegram.ui.objects.AppDrawer
+import study.heltoe.telegram.utilits.replaceActivity
+import study.heltoe.telegram.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -27,16 +28,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (false) {
+        if (true) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.dataContainer, ChatFragment())
-                .commit()
+            replaceFragment(ChatFragment())
         } else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
     }
 

@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import study.heltoe.telegram.R
 import study.heltoe.telegram.databinding.ActivityRegisterBinding
 import study.heltoe.telegram.ui.fragments.EnterPhoneNumberFragment
+import study.heltoe.telegram.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityRegisterBinding
@@ -21,8 +22,6 @@ class RegisterActivity : AppCompatActivity() {
         mToolbar = mBinding.registerToolbar
         setSupportActionBar(mToolbar)
         title = getString(R.string.register_title_your_phone)
-        supportFragmentManager.beginTransaction()
-            .add(R.id.register_dataContainer, EnterPhoneNumberFragment())
-            .commit()
+        replaceFragment(EnterPhoneNumberFragment())
     }
 }
