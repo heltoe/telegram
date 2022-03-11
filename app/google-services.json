@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994151549483",
+    "project_id": "telegram-aaa0f",
+    "storage_bucket": "telegram-aaa0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994151549483:android:e33c9332188adb3a52b86e",
+        "android_client_info": {
+          "package_name": "study.heltoe.telegram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994151549483-rb4a6a1tedpk804iafvireetbkkone5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYgQhcm4_boNPWhOoNT17LQIBBNNoIjtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994151549483-rb4a6a1tedpk804iafvireetbkkone5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

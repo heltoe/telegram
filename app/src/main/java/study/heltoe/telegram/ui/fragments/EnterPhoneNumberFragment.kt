@@ -7,6 +7,8 @@ import study.heltoe.telegram.utilits.replaceFragment
 import study.heltoe.telegram.utilits.showToast
 
 class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) {
+
+
     override fun onStart() {
         super.onStart()
         register_btn_next.setOnClickListener { sendCode() }
@@ -16,7 +18,12 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
         if (register_input_phone_number.text.toString().isEmpty()) {
             showToast(getString(R.string.register_toast_enter_phone))
         } else {
-            replaceFragment(EnterCodeFragment())
+            authUser()
+//            replaceFragment(EnterCodeFragment())
         }
+    }
+
+    private fun authUser() {
+
     }
 }
