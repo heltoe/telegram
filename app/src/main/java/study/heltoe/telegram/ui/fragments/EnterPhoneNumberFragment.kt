@@ -21,8 +21,8 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
     override fun onStart() {
         super.onStart()
         mCallBack = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            override fun onVerificationCompleted(p0: PhoneAuthCredential) {
-                AUTH.signInWithCredential(p0).addOnCompleteListener {
+            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
+                AUTH.signInWithCredential(credential).addOnCompleteListener {
                     if (it.isSuccessful) {
                         showToast("Добро пожаловать")
                         (activity as RegisterActivity).replaceActivity(MainActivity())

@@ -11,11 +11,10 @@ import study.heltoe.telegram.utilits.AppTextWatcher
 import study.heltoe.telegram.utilits.replaceActivity
 import study.heltoe.telegram.utilits.showToast
 
-class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.layout.fragment_enter_code) {
-
+class EnterCodeFragment(val pPhoneNumber: String, val id: String) : Fragment(R.layout.fragment_enter_code) {
     override fun onStart() {
         super.onStart()
-        (activity as RegisterActivity).title = phoneNumber
+        (activity as RegisterActivity).title = pPhoneNumber
         register_input_code.addTextChangedListener(AppTextWatcher {
             val string = register_input_code.text.toString()
             if (string.length == 6) {
