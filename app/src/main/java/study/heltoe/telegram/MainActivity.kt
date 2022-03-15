@@ -8,6 +8,7 @@ import study.heltoe.telegram.activities.RegisterActivity
 import study.heltoe.telegram.databinding.ActivityMainBinding
 import study.heltoe.telegram.ui.fragments.ChatFragment
 import study.heltoe.telegram.ui.objects.AppDrawer
+import study.heltoe.telegram.utilits.AUTH
 import study.heltoe.telegram.utilits.replaceActivity
 import study.heltoe.telegram.utilits.replaceFragment
 
@@ -15,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mToolbar: Toolbar
     private lateinit var mAppDrawer: AppDrawer
-    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (mAuth.currentUser != null) {
+        if (AUTH.currentUser != null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            replaceFragment(ChatFragment())
+            replaceFragment(ChatFragment(), false)
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -42,6 +42,6 @@ class MainActivity : AppCompatActivity() {
     private fun init() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
-        mAuth = FirebaseAuth.getInstance()
+        AUTH = FirebaseAuth.getInstance()
     }
 }
