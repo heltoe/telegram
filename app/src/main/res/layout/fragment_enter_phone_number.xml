@@ -10,6 +10,7 @@
         android:id="@+id/register_input_phone_number"
         style="@style/editRegisterText"
         android:autofillHints=""
+        android:hint="@string/register_toast_enter_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

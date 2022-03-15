@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import study.heltoe.telegram.R
 import study.heltoe.telegram.databinding.ActivityRegisterBinding
 import study.heltoe.telegram.ui.fragments.EnterPhoneNumberFragment
+import study.heltoe.telegram.utilits.initFirebase
 import study.heltoe.telegram.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        initFirebase()
     }
 
     override fun onStart() {

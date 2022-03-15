@@ -1,5 +1,6 @@
 package study.heltoe.telegram.ui.fragments
 
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.PhoneAuthCredential
@@ -24,9 +25,11 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 AUTH.signInWithCredential(credential).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        Log.d("MyLog", "Добро пожаловать")
                         showToast("Добро пожаловать")
                         (activity as RegisterActivity).replaceActivity(MainActivity())
                     } else {
+                        Log.d("MyLog", it.exception?.message.toString())
                         showToast(it.exception?.message.toString())
                     }
                 }
