@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "994151549483",
+    "firebase_url": "https://telegram-aaa0f-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "telegram-aaa0f",
     "storage_bucket": "telegram-aaa0f.appspot.com"
   },
@@ -13,6 +14,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "994151549483-145f5gal0jajsg2hkgpd8l9opup1umtl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "study.heltoe.telegram",
+            "certificate_hash": "ba64d687025e8544720f9cefdad25c26ce65086c"
+          }
+        },
+        {
+          "client_id": "994151549483-tapvc49omnle8vogajjt8tegqvcltpek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "study.heltoe.telegram",
+            "certificate_hash": "91241b8e62d0a54e0f7f309353d00717a93b966d"
+          }
+        },
         {
           "client_id": "994151549483-rb4a6a1tedpk804iafvireetbkkone5q.apps.googleusercontent.com",
           "client_type": 3

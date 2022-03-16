@@ -5,8 +5,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import study.heltoe.telegram.R
-import study.heltoe.telegram.activities.RegisterActivity
-import study.heltoe.telegram.ui.fragments.ChatFragment
 
 fun Fragment.showToast(message: String) {
     Toast.makeText(this.context, message, Toast.LENGTH_LONG).show()
