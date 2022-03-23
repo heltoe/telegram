@@ -3,14 +3,15 @@ package study.heltoe.telegram
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import study.heltoe.telegram.activities.RegisterActivity
 import study.heltoe.telegram.databinding.ActivityMainBinding
+import study.heltoe.telegram.models.User
 import study.heltoe.telegram.ui.fragments.ChatFragment
 import study.heltoe.telegram.ui.objects.AppDrawer
-import study.heltoe.telegram.utilits.AUTH
-import study.heltoe.telegram.utilits.initFirebase
-import study.heltoe.telegram.utilits.replaceActivity
-import study.heltoe.telegram.utilits.replaceFragment
+import study.heltoe.telegram.utilits.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -43,5 +44,15 @@ class MainActivity : AppCompatActivity() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
         initFirebase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DB_ROOT
+            .child(NODE_USERS)
+            .child(UID)
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                USER = it.getValue(User::class.java) ?: User()
+            })
     }
 }

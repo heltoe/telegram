@@ -14,6 +14,7 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import study.heltoe.telegram.R
 import study.heltoe.telegram.ui.fragments.SettingsFragment
+import study.heltoe.telegram.utilits.USER
 import study.heltoe.telegram.utilits.replaceFragment
 
 class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
@@ -131,8 +132,8 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             .withHeaderBackground(R.drawable.header)
             .addProfiles(
                 ProfileDrawerItem()
-                    .withName("Vlad Zhulinskiy")
-                    .withEmail("89266619367")
+                    .withName(USER.fullname)
+                    .withEmail(USER.photoUrl)
             )
             .build()
     }

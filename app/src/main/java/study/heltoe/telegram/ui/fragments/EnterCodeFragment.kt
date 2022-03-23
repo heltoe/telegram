@@ -1,9 +1,7 @@
 package study.heltoe.telegram.ui.fragments
 
 import androidx.fragment.app.Fragment
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 import study.heltoe.telegram.MainActivity
 import study.heltoe.telegram.R
@@ -11,7 +9,7 @@ import study.heltoe.telegram.activities.RegisterActivity
 import study.heltoe.telegram.models.User
 import study.heltoe.telegram.utilits.*
 
-class EnterCodeFragment(val phoneNumber: String, val id: String) :
+class EnterCodeFragment(private val phoneNumber: String, val id: String) :
     Fragment(R.layout.fragment_enter_code) {
     override fun onStart() {
         super.onStart()
@@ -22,14 +20,15 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
         })
     }
 
-    private fun updateUserInfo (user: User) {
+    private fun updateUserInfo(id: String) {
+        val user = User(id, phoneNumber, id)
         REF_DB_ROOT
             .child(NODE_USERS)
             .child(user.id)
             .updateChildren(user.toMap())
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    showToast("Добро пожаловать")
+                    showToast(getString(R.string.greeting))
                     (activity as RegisterActivity).replaceActivity(MainActivity())
                 } else showToast(it.exception?.message.toString())
             }
@@ -44,8 +43,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     val uid = AUTH.currentUser?.uid.toString()
-                    val user = User(uid, phoneNumber, uid)
-                    updateUserInfo(user)
+                    updateUserInfo(uid)
                 } else showToast(it.exception?.message.toString())
             }
             .addOnFailureListener { showToast(it.message.toString()) }

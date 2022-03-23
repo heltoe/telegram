@@ -9,7 +9,7 @@ data class User(
     val phone: String = "",
     val username: String = "",
     val bio: String = "",
-    val fullname: String = "",
+    var fullname: String = "",
     val status: String = "",
     val photoUrl: String = ""
     ) {

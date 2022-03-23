@@ -24,11 +24,9 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 AUTH.signInWithCredential(credential).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        Log.d("MyLog", "Добро пожаловать")
-                        showToast("Добро пожаловать")
+                        showToast(getString(R.string.greeting))
                         (activity as RegisterActivity).replaceActivity(MainActivity())
                     } else {
-                        Log.d("MyLog", it.exception?.message.toString())
                         showToast(it.exception?.message.toString())
                     }
                 }
