@@ -8,26 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:994151549483:android:e33c9332188adb3a52b86e",
+        "mobilesdk_app_id": "1:994151549483:android:e526ded7b7e927ce52b86e",
         "android_client_info": {
           "package_name": "study.heltoe.telegram"
         }
       },
       "oauth_client": [
         {
-          "client_id": "994151549483-145f5gal0jajsg2hkgpd8l9opup1umtl.apps.googleusercontent.com",
+          "client_id": "994151549483-4duct522trlt3ul83hj0p08flcsg7s1c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "study.heltoe.telegram",
             "certificate_hash": "ba64d687025e8544720f9cefdad25c26ce65086c"
-          }
-        },
-        {
-          "client_id": "994151549483-tapvc49omnle8vogajjt8tegqvcltpek.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "study.heltoe.telegram",
-            "certificate_hash": "91241b8e62d0a54e0f7f309353d00717a93b966d"
           }
         },
         {

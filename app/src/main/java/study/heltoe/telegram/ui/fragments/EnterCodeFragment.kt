@@ -1,7 +1,9 @@
 package study.heltoe.telegram.ui.fragments
 
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 import study.heltoe.telegram.MainActivity
 import study.heltoe.telegram.R
@@ -20,27 +22,31 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
         })
     }
 
+    private fun updateUserInfo (user: User) {
+        REF_DB_ROOT
+            .child(NODE_USERS)
+            .child(user.id)
+            .updateChildren(user.toMap())
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    showToast("Добро пожаловать")
+                    (activity as RegisterActivity).replaceActivity(MainActivity())
+                } else showToast(it.exception?.message.toString())
+            }
+            .addOnFailureListener { showToast(it.message.toString()) }
+    }
+
     private fun enterCode() {
         val code = register_input_code.text.toString()
         val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH
             .signInWithCredential(credential)
-            .addOnCompleteListener { task1 ->
-                if (task1.isSuccessful) {
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
                     val uid = AUTH.currentUser?.uid.toString()
                     val user = User(uid, phoneNumber, uid)
-                    REF_DB_ROOT
-                        .child(NODE_USERS)
-                        .child(uid)
-                        .updateChildren(user.toMap())
-                        .addOnCompleteListener { task2 ->
-                            if (task2.isSuccessful) {
-                                showToast("Добро пожаловать")
-                                (activity as RegisterActivity).replaceActivity(MainActivity())
-                            } else showToast(task2.exception?.message.toString())
-                        }
-                        .addOnFailureListener { showToast(it.message.toString()) }
-                } else showToast(task1.exception?.message.toString())
+                    updateUserInfo(user)
+                } else showToast(it.exception?.message.toString())
             }
             .addOnFailureListener { showToast(it.message.toString()) }
     }

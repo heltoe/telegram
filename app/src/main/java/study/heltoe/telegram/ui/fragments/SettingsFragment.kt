@@ -8,6 +8,7 @@ import study.heltoe.telegram.R
 import study.heltoe.telegram.activities.RegisterActivity
 import study.heltoe.telegram.utilits.AUTH
 import study.heltoe.telegram.utilits.replaceActivity
+import study.heltoe.telegram.utilits.replaceFragment
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onResume() {
@@ -25,6 +26,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
                 AUTH.signOut()
                 (activity as MainActivity).replaceActivity(RegisterActivity())
             }
+            R.id.settings_menu_change_name -> replaceFragment(ChangeNameFragment())
         }
         return true
     }

@@ -10,10 +10,7 @@ import kotlinx.android.synthetic.main.fragment_enter_phone_number.*
 import study.heltoe.telegram.MainActivity
 import study.heltoe.telegram.R
 import study.heltoe.telegram.activities.RegisterActivity
-import study.heltoe.telegram.utilits.AUTH
-import study.heltoe.telegram.utilits.replaceActivity
-import study.heltoe.telegram.utilits.replaceFragment
-import study.heltoe.telegram.utilits.showToast
+import study.heltoe.telegram.utilits.*
 import java.util.concurrent.TimeUnit
 
 
